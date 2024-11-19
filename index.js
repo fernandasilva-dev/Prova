@@ -1,9 +1,9 @@
-import cifra from './cesar.js'
+import cifra from './cesar.js';
 
-var letra = ['b','o','m','d', 'i', 'a']
-var chave = 3
-console.log("mesagem: " + letra)
+const letra = ['b', 'o', 'm', 'd', 'i', 'a'];
+const chave = 3;
 
-var texto1 = cifra.criptografia(letra,chave,cifra.cifraLetra(letra,chave))
-console.log(texto1)
+console.log("Mensagem original: " + letra.join(''));
 
+const texto1 = cifra.criptografia(letra, chave, cifra.cifraLetra);
+console.log("Mensagem criptografada: " + texto1);
