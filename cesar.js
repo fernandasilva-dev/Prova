@@ -1,36 +1,23 @@
-function criptografia(mensagem, chave, converter){
-    let m = []
-    for(let i = 0; i < mensagem.length; i ++){
-        m.push(mensagem[i])
-        var texto = converter(m[i],chave,cifraLetra)
+function criptografia(mensagem, chave, converter) {
+    let texto = '';
+    for (let i = 0; i < mensagem.length; i++) {
+        texto += converter(mensagem[i], chave);
     }
-    return texto
+    return texto;
 }
 
-function cifraLetra(letra, chave){
-    const L = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    let aux = ''
-    for(let i = 0; i < L.length; i ++){
-        if(i > 25){
-            i = 0
-        }
-
-        if( L[i] == letra){
-            aux = L[i+chave]
-        }
-    }
-    return aux
+function cifraLetra(letra, chave) {
+    const L = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    let index = L.indexOf(letra);
+    if (index === -1) return letra; 
+    return L[(index + chave) % 26];
 }
 
-function desifraLetra(letra,chave){
-    const L = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    let aux = ''
-    for(let i = 0; i < L.length; i ++){
-        if( L[i] == letra){
-            aux = L[i - chave]
-        }
-    }
-    return aux
+function desifraLetra(letra, chave) {
+    const L = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    let index = L.indexOf(letra);
+    if (index === -1) return letra; 
+    return L[(index - chave + 26) % 26]; 
 }
 
-export default {criptografia}
+export default { criptografia, cifraLetra, desifraLetra };
