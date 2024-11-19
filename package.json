@@ -1,0 +1,20 @@
+{
+  "name": "prova",
+  "version": "1.0.0",
+  "description": "1ª avaliação - Programação web I",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandasilva-dev/Prova.git"
+  },
+  "author": "Fernanda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fernandasilva-dev/Prova/issues"
+  },
+  "homepage": "https://github.com/fernandasilva-dev/Prova#readme"
+}
